@@ -1,12 +1,12 @@
 # ifndef CAT_HPP
 # define CAT_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 # include <iostream>
 # include <string>
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
     public:
         Cat();
@@ -14,8 +14,8 @@ class Cat : public Animal
         Cat(Cat const &another);
         Cat &operator=(const Cat &other);
         virtual void makeSound(void) const;
-        Animal getType(void) const;
-        Brain *getBrain() const;
+        AAnimal getType(void) const;
+        virtual Brain	*getBrain( void ) const;
 
     private:
         Brain *brain;

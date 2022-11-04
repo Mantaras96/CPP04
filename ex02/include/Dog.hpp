@@ -1,12 +1,12 @@
 # ifndef DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 # include <iostream>
 # include <string>
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
     public:
         Dog();
@@ -14,9 +14,9 @@ class Dog : public Animal
         Dog(Dog const &another);
         Dog &operator=(const Dog &other);
         virtual void makeSound(void) const;
-        Animal getType(void) const;
-        Brain *getBrain() const;
-
+        AAnimal getType(void) const;
+        virtual Brain	*getBrain( void ) const;
+        
     private:
         Brain *brain;
 };
