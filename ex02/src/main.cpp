@@ -1,6 +1,7 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
+#include "AAnimal.hpp"
 
 #define NUMBER_OF_ANIMALS 8
 
