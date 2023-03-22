@@ -7,11 +7,15 @@ INC_DIR = include
 SRC =		main.cpp \
 			Animal.cpp \
 			Dog.cpp \
-			Cat.cpp
+			Cat.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp
  
 HEADER = Animal.hpp \
 			Dog.hpp \
-			Cat.hpp
+			Cat.hpp \
+			WrongAnimal.hpp \
+			WrongCat.hpp
 
 SRC := $(SRC:%=$(SRC_DIR)/%)
 OBJS = ${SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o}

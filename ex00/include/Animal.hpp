@@ -9,10 +9,14 @@ class Animal
 public:
     Animal();
     Animal(std::string type);
-    ~Animal(void);
+    
+    virtual ~Animal(void);
     Animal(Animal const &another);
+    
     Animal &operator=(const Animal &other);
+    
     virtual void makeSound(void) const;
+
     std::string getType(void) const;
 
 protected:
