@@ -1,40 +1,22 @@
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
-#include "AAnimal.hpp"
-
-#define NUMBER_OF_ANIMALS 8
+#include "../include/AAnimal.hpp"
+#include "../include/Dog.hpp"
+#include "../include/Cat.hpp"
+#include "../include/WrongAnimal.hpp"
+#include "../include/WrongCat.hpp"
 
 int	main( void )
 {
-	AAnimal	*animals[NUMBER_OF_ANIMALS];
-	Brain	*brain;
+	int size = 5;
+	AAnimal	*arrayAnimals[2 * size];
 
-	/* AAnimal *bonjour = new AAnimal(); */
-
-	for (int i = 0; i < NUMBER_OF_ANIMALS; i++)
+	for (int i = 0; i < size; i++)
 	{
-		if (i < NUMBER_OF_ANIMALS / 2)
-			animals[i] = new Dog();
-		else
-			animals[i] = new Cat();
-		std::cout << animals[i]->getType() << std::endl;
+		arrayAnimals[i] = new Dog();
+		arrayAnimals[size + i] = new Cat();
 	}
 
-	brain = animals[7]->getBrain();
-	brain->ideas[0] = "I'm hungry";
-	brain->ideas[1] = "That's a strange idea I'm having";
-	brain->ideas[2] = "Ball!!!!!";
-	brain->ideas[3] = "Squirrel!!!!!";
-	std::cout << animals[7]->getBrain()->ideas[0] << std::endl;
+	std::cout << std::endl;
 
-	animals[3]->makeSound();
-	animals[6]->makeSound();
-	std::cout << "Type: " << animals[2]->getType() << std::endl;
-
-	*(animals[5]) = *(animals[7]);
-	std::cout << animals[5]->getBrain()->ideas[2] << std::endl;
-
-	for (int i = 0; i < NUMBER_OF_ANIMALS; i++)
-		delete animals[i];
+	for (int i = 0; i < 2 * size; i++)
+		delete arrayAnimals[i];
 }
