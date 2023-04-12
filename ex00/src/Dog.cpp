@@ -11,7 +11,7 @@ Dog::~Dog(void)
     std::cout << "Dog " << this->type << " is dead" << std::endl;
 }
 
-Dog::Dog(Dog const &another)
+Dog::Dog(Dog const &another): Animal()
 {
     std::cout << "Dog copy constructor called" << std::endl;
     *this = another;

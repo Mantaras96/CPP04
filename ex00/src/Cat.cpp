@@ -11,7 +11,7 @@ Cat::~Cat(void)
     std::cout << "Cat " << this->type << " is dead" << std::endl;
 }
 
-Cat::Cat(Cat const &another)
+Cat::Cat(Cat const &another): Animal()
 {
     std::cout << "Cat copy constructor called" << std::endl;
     *this = another;

@@ -11,7 +11,7 @@ WrongCat::~WrongCat(void)
     std::cout << "WrongCat " << this->type << " is dead" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &another)
+WrongCat::WrongCat(WrongCat const &another): WrongAnimal()
 {
     std::cout << "WrongCat copy constructor called" << std::endl;
     *this = another;
