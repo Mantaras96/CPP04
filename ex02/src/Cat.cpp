@@ -13,17 +13,25 @@ Cat::~Cat(void)
     std::cout << "Cat " << this->type << " is dead" << std::endl;
 }
 
-Cat::Cat(Cat const &another): AAnimal()
+Cat::Cat(Cat const &another)
 {
     std::cout << "Cat copy constructor called" << std::endl;
     *this = another;
 }
 
-Cat &Cat::operator=(const Cat &other)
+Cat &Cat::operator=(Cat const & rhs)
 {
     std::cout << "Cat assignation operator called" << std::endl;
-    this->type = other.type;
-    this->brain = other.brain;
+    this->type = rhs.getType();
+    *(this->brain) = *(rhs.getBrain());
+    return *this;
+}
+
+AAnimal &Cat::operator=(AAnimal const & rhs)
+{
+    std::cout << "Cat assignation operator called" << std::endl;
+    this->type = rhs.getType();
+    *(this->brain) = *(rhs.getBrain());
     return *this;
 }
 

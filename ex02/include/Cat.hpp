@@ -12,14 +12,15 @@ class Cat : public AAnimal
         Cat();
         ~Cat(void);
         Cat(Cat const &another);
-        Cat &operator=(const Cat &other);
-        virtual void makeSound(void) const;
-        AAnimal getType(void) const;
-        virtual Brain	*getBrain( void ) const;
 
+        virtual Cat		&operator=( Cat const & rhs );
+	    virtual AAnimal	&operator=( const AAnimal &other );
+        
+        virtual void makeSound(void) const;
+	    virtual Brain	*getBrain( void ) const;
+        
     private:
         Brain *brain;
 };
-
 
 # endif

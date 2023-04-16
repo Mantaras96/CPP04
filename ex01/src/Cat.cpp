@@ -19,11 +19,19 @@ Cat::Cat(Cat const &another): Animal()
     *this = another;
 }
 
-Cat &Cat::operator=(const Cat &other)
+Cat &Cat::operator=(Cat const & rhs)
 {
     std::cout << "Cat assignation operator called" << std::endl;
-    this->type = other.type;
-    this->brain = other.brain;
+    this->type = other.getType();
+    *(this->brain) = *(other.getBrain());
+    return *this;
+}
+
+Animal &Cat::operator=(Animal const & rhs)
+{
+    std::cout << "Cat assignation operator called" << std::endl;
+    this->type = other.getType();
+    *(this->brain) = *(other.getBrain());
     return *this;
 }
 

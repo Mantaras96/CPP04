@@ -3,21 +3,22 @@
 
 # include <iostream>
 # include <string>
+# include "Brain.hpp"
 
 class AAnimal
 {
 public:
 
-    virtual ~AAnimal(void);
+	virtual ~AAnimal( void );
 
-    virtual void makeSound(void) const;
-    std::string getType(void) const;
+	virtual AAnimal		&operator=( const AAnimal &other ) = 0;
+    
+    virtual void		makeSound( void ) const = 0;
+	
+	const std::string	&getType( void ) const ;
+    virtual Brain		*getBrain( void ) const = 0;
 
 protected:
-    AAnimal();
-    AAnimal(std::string type);
-    AAnimal(AAnimal const &another);
-    virtual AAnimal &operator=(const AAnimal &other);
     std::string type;
 };
 

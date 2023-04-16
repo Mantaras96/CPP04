@@ -12,10 +12,12 @@ class Dog : public AAnimal
         Dog();
         ~Dog(void);
         Dog(Dog const &another);
-        Dog &operator=(const Dog &other);
+
+        virtual Dog		&operator=( Dog const & rhs );
+	    virtual AAnimal	&operator=( const AAnimal &other );
+        
         virtual void makeSound(void) const;
-        AAnimal getType(void) const;
-        virtual Brain	*getBrain( void ) const;
+	    virtual Brain	*getBrain( void ) const;
         
     private:
         Brain *brain;
